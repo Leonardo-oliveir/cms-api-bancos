@@ -8,5 +8,5 @@ class Test extends Model
 {
     use IsClientDataBase;
 
-    protected $table = "produtos";
+    protected $table = "configuracoes";
 }

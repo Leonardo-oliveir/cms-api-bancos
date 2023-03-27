@@ -10,6 +10,12 @@ Route::group(['prefix' => 'v1'], function () {
     });
 });
 
+Route::group(['prefix' => 'v1'], function () {
+    Route::group(['middleware' => ['externalAuth']], function () {
+        Route::get('moduleConfigNoticia', [Controller::class, 'moduleConfigNoticia'])->name('moduleConfigNoticia');
+    });
+});
+
 Route::get('/', function () {
     return "Bem-vindo ao Microserviço responsável pelo gereciamento dos bancos do CMS.";
 });

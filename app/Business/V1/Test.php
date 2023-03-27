@@ -12,4 +12,5 @@ class Test
     {
         return $this->repository->test();
     }
+    
 }

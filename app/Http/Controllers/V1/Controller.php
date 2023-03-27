@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use App\Business\V1\modules\moduleConfig\moduleConfigNoticia;
 
 class Controller extends BaseController
 {
@@ -29,5 +30,14 @@ class Controller extends BaseController
         // A Repository precisa ser registrada na classe RepositoryServiceProvider com sua devida interface
         // Para conectar no banco do cliente deve ser usado a trait IsClientDataBase na model.
         return $test->test();
+    }
+
+    public function moduleConfigNoticia()
+    {
+        $teste = new moduleConfigNoticia();
+        var_dump( $teste);
+        // A Repository precisa ser registrada na classe RepositoryServiceProvider com sua devida interface
+        // Para conectar no banco do cliente deve ser usado a trait IsClientDataBase na model.
+        return $teste->moduleConfigNoticia();
     }
 }
