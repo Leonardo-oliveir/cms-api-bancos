@@ -10,6 +10,20 @@ Route::group(['prefix' => 'v1'], function () {
     });
 });
 
+Route::group(['prefix' => 'v1'], function () {
+    Route::group(['middleware' => ['externalAuth']], function () {
+        Route::get('moduleConfig', [Controller::class, 'ModuleConfigNoticia'])->name('ModuleConfigNoticia');
+
+    });
+});
+
+Route::group(['prefix' => 'v1'], function () {
+    Route::group(['middleware' => ['externalAuth']], function () {
+        Route::get('module/{idMetodo}/{idFuncionalidade}/{namePage}', [Controller::class, 'CreateModule'])->name('CreateModule');
+
+    });
+});
+
 Route::get('/', function () {
     return "Bem-vindo ao Microserviço responsável pelo gereciamento dos bancos do CMS.";
 });

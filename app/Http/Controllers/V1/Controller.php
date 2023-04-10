@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Business\V1\modules\Module;
 use App\Business\V1\Test;
 use App\Facades\Auth\DataBaseFacade;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use App\Business\V1\modules\moduleConfig\ModuleConfigNoticia;
+use Illuminate\Support\Facades\Artisan;
+
 
 class Controller extends BaseController
 {
@@ -29,5 +33,21 @@ class Controller extends BaseController
         // A Repository precisa ser registrada na classe RepositoryServiceProvider com sua devida interface
         // Para conectar no banco do cliente deve ser usado a trait IsClientDataBase na model.
         return $test->test();
+    }
+
+    public function ModuleConfigNoticia()
+    {
+        $teste = new ModuleConfigNoticia();
+        // A Repository precisa ser registrada na classe RepositoryServiceProvider com sua devida interface
+        // Para conectar no banco do cliente deve ser usado a trait IsClientDataBase na model.
+        return $teste->ModuleConfigNoticia();
+    }
+
+    public function CreateModule($idMetodo, $idFuncionalidade,$namePage)
+    {
+        $createModule = new Module($idMetodo, $idFuncionalidade,$namePage);
+        // A Repository precisa ser registrada na classe RepositoryServiceProvider com sua devida interface
+        // Para conectar no banco do cliente deve ser usado a trait IsClientDataBase na model.
+        return $createModule->createModule();
     }
 }
