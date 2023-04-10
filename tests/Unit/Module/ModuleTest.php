@@ -18,7 +18,7 @@ class ModuleTest extends TestCase
     {
         $response = new Controller();
 
-        $response->CreateModule(5,1,'asd');
+        $response->CreateModule(5, 1, 'asd');
 
         $response->assertTrue(true);
     }
