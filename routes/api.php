@@ -12,7 +12,15 @@ Route::group(['prefix' => 'v1'], function () {
 
 Route::group(['prefix' => 'v1'], function () {
     Route::group(['middleware' => ['externalAuth']], function () {
-        Route::get('moduleConfigNoticia', [Controller::class, 'moduleConfigNoticia'])->name('moduleConfigNoticia');
+        Route::get('moduleConfig', [Controller::class, 'ModuleConfigNoticia'])->name('ModuleConfigNoticia');
+
+    });
+});
+
+Route::group(['prefix' => 'v1'], function () {
+    Route::group(['middleware' => ['externalAuth']], function () {
+        Route::get('module/{idMetodo}/{idFuncionalidade}/{namePage}', [Controller::class, 'CreateModule'])->name('CreateModule');
+
     });
 });
 

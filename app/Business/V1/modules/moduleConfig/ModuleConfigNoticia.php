@@ -4,13 +4,13 @@ namespace App\Business\V1\modules\moduleConfig;
 
 use App\Business\V1\Business;
 
-class moduleConfigNoticia
+class ModuleConfigNoticia
 {
     use Business;
 
-    public function moduleConfigNoticia()
+    public function ModuleConfigNoticia()
     {
-        return $this->repository->moduleConfigNoticia();
+        return $this->repository->ModuleConfigNoticia();
     }
     
 }

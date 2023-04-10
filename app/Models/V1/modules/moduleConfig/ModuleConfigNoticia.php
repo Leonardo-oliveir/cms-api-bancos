@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\V1\modules\modulesConfig;
+namespace App\Models\V1\modules\moduleConfig;
 
 use App\Models\V1\IsClientDataBase;
 
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 
-class moduleConfigNoticia extends Model
+class ModuleConfigNoticia extends Model
 {
     use IsClientDataBase;
 

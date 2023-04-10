@@ -4,7 +4,7 @@ namespace App\Repository\Interfaces\modules\moduleConfig;
 
 use Illuminate\Database\Eloquent\Collection;
 
-interface moduleConfigNoticia
+interface ModuleConfigNoticia
 {
-    public function moduleConfigNoticia(): Collection;
+    public function ModuleConfigNoticia(): Collection;
 }
